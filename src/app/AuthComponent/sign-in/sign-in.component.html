@@ -1,0 +1,46 @@
+<body class="text-center add-style">
+    <main class="form-signin">
+        <form [formGroup]="signInData" (ngSubmit)="submitSigninData()">
+            <img class="mb-4" src="assets/images/logo.png" alt="" width="100" height="auto">
+            <h1 class="h3 mb-3 fw-normal fw-bold">Please sign in</h1>
+
+            <div class="form-floating my-3">
+                <input type="email" formControlName="email" class="form-control" id="floatingInput"
+                    placeholder="name@example.com" fdprocessedid="mwgrlo">
+                <label for="floatingInput">Email address</label>
+                <div *ngIf="signInData.get('email')?.touched">
+                    <div *ngIf="signInData.get('email')?.hasError('required')">
+                        <p class="error">Required field.</p>
+                    </div>
+                    <!-- <div *ngIf="signInData.get('email')?.hasError('pattern')">
+                        <p class="error">Pattern does not match.</p>
+                    </div> -->
+                </div>
+            </div>
+            <div class="form-floating my-3">
+                <input type="password" formControlName="password" class="form-control" id="floatingPassword"
+                    placeholder="Password" fdprocessedid="aeghfe">
+                <label for="floatingPassword">Password</label>
+                <div *ngIf="signInData.get('password')?.touched">
+                    <div *ngIf="signInData.get('password')?.hasError('required')">
+                        <p class="error">*Required field.</p>
+                    </div>
+                    <!-- <div *ngIf="signInData.get('password')?.hasError('pattern')">
+                        <p class="error">Pattern does not match</p>
+                    </div> -->
+                </div>
+            </div>
+
+            <div class="checkbox mb-3">
+                <label>
+                    <input type="checkbox" value="remember-me"> Remember me
+                </label>
+            </div>
+            <div class="mb-3">
+                <span> Have an Account? / </span><span><a routerLink="/sign-up" class="style">Sign Up</a></span>
+            </div>
+            <button class="w-100 btn btn-lg btn-warning fw-bold" type="submit" fdprocessedid="vuzel">Sign in</button>
+            <p class="mt-5 mb-3 text-muted">© 2017–2021</p>
+        </form>
+    </main>
+</body>

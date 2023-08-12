@@ -1,0 +1,23 @@
+<div class="container-fluid">
+    <div class="row">
+        <ng-container *ngFor="let n of colProductsOne">
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                <div class="card m-3 p-3">
+
+                        <img src={{n.coimg}} class="card-img-top image-fluid" alt="...">
+    
+                    <div class="card-body">
+                        <h5 class="card-title">{{n.coname}}</h5>
+                        <h4 class="card-title">{{n.cotitle}}</h4>
+                        <p class="card-title">{{n.copar1}}</p>
+                        <span class="text-decoration-line-through text-danger">Mrp : {{n.coprice}}/- </span>
+                        <span class="badge bg-success p-1">Get 40% off.</span>
+                    </div>
+                    <a routerLink="single-home-card-one-dtls/{{n.coid}}">
+                        <button class="btn btn-warning btn-style">Buy Now</button>
+                    </a>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>

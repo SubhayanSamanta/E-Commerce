@@ -1,0 +1,126 @@
+<div class="container-fluid add-margin">
+    <img src="assets/images/banner.png" alt="" class="img-fluid image">
+
+    <div class="row container-fluid">
+        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col">
+
+            <div class="card add-style">
+                <h4 class="txt-color">Get 40% off on Mobile Brands | Hurry Up</h4>
+                <div class="row">
+                    <ng-container *ngFor="let n of colHomeCardOne">
+                        <div class="col-6">
+
+                            <img src={{n.coimg}} class="card-img-top img-fluid crd-image" alt="...">
+
+                        </div>
+                    </ng-container>
+                </div>
+                <a routerLink="home-card-one-dtls">
+                    <button class="btn btn-warning button">View More -></button>
+                </a>
+            </div>
+
+        </div>
+
+        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col">
+
+            <div class="card add-style">
+                <h4 class="txt-color">Get upto 30% off on Laptop | Limited Time</h4>
+                <div class="row">
+                    <ng-container *ngFor="let n of colHomeCardTwo">
+                        <div class="col-6">
+
+                            <img src={{n.ctimg}} class="card-img-top img-fluid crd-image" alt="...">
+
+                        </div>
+                    </ng-container>
+                </div>
+                <a routerLink="home-card-two-dtls">
+                    <button class="btn btn-warning align-center button">View More -></button>
+                </a>
+            </div>
+        </div>
+        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col">
+            <div class="card add-style">
+                <h4 class="txt-color">Get upto 50% off in Home Decor | Get it Today</h4>
+                <div class="row">
+                    <ng-container *ngFor="let n of colHomeCardThree">
+                        <div class="col-6">
+
+                            <img src={{n.ctrimg}} class="card-img-top img-fluid crd-image" alt="...">
+
+                        </div>
+                    </ng-container>
+                </div>
+                <a routerLink="home-card-three-dtls">
+                    <button class="btn btn-warning button">View More -></button>
+                </a>
+            </div>
+        </div>
+        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col">
+            <div class="card add-style">
+                <h4 class="txt-color">Get 40% off on Cosmetics Products | Hurry Up</h4>
+                <div class="row">
+                    <ng-container *ngFor="let n of colHomeCardFour">
+                        <div class="col-6">
+                            <div class="card m-1 p-3">
+
+                                <img src={{n.cfimg}} class="card-img-top img-fluid" alt="...">
+
+                            </div>
+                        </div>
+                    </ng-container>
+                </div>
+                <a routerLink="home-card-four-dtls">
+                    <button class="btn btn-warning button">View More -></button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid add-style">
+        <div class="row">
+            <h3 class="txt-color">Get upto 50% off in Home Appliance.</h3>
+            <ng-container *ngFor="let n of productsTwo">
+                <div class="col-xl-2 col-lg-4 col-md-4 col-sm-6">
+                    <div class="card m-1 p-3">
+                        <a routerLink="ptsub/{{n.ptid}}">
+                            <img src={{n.ptimg}} class="card-img-top img-fluid" alt="...">
+                        </a>
+                        <div class="card-body">
+                            <h4 class="card-title">{{n.ptname}}</h4>
+                            <h5>{{n.ptprice| percentage:50 | currency :'INR'}}</h5>
+                            <span class="text-decoration-line-through text-danger">Mrp :
+                                {{n.ptprice}}/- </span>
+                            <span class="badge bg-success p-1">Get 50% off.</span>
+                        </div>
+                        <a routerLink="ptsub/{{n.ptid}}">
+                            <button class="btn btn-warning button m-1">View More -></button>
+                        </a>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- <div class="container-fluid">
+        <div class="row">
+            <ng-container *ngFor="let n of allProducts">
+                <div class="col-xl-2 col-lg-3 col-md-3 col-sm-4">
+                    <div class="card m-3 p-3">
+                        <a href="">
+                            <img src={{n.pimg}} class="card-img-top image-fluid" alt="...">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">{{n.pname}}</h5>
+                            <h6 class="card-text">Price : {{n.pprice}}</h6>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+</div> -->

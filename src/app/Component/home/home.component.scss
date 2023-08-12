@@ -1,0 +1,53 @@
+* {
+    font-weight: bold;
+    margin: 0px;
+    padding: 0px;
+}
+
+.cont{
+    width: 100%;
+}
+.container-fluid {}
+
+.image {
+    width: 100%;
+    height: auto;
+}
+
+.add-style {
+    width: auto;
+    margin: 8px;
+    padding: 8px;
+    background-color: rgb(164, 161, 155);
+}
+
+.txt-color {
+    color: white;
+    padding: 10px 10px 10px 10px;
+}
+
+.crd-image {
+    width: 90%;
+    height: fit-content;
+    margin: 5%;
+}
+
+.card-atyle {
+    width: 90%;
+    height: auto;
+}
+
+.card-img:hover {
+    border: 2px solid orange;
+}
+
+.button {
+    width: 100%;
+    height: auto;
+    border-radius: 10%;
+    font-weight: bold;
+    font-size: 100%;
+    margin: 0 20% 0 50%;
+    padding: 3%;
+    margin: auto;
+}

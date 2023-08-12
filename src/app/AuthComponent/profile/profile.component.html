@@ -1,0 +1,19 @@
+<div class="conrtainer-fluid con-style">
+    <div class="row">
+        <div class="col-12">
+            <h3 class="fw-bold style">Hey {{colApiRes?.data.first_name}}, this is your Profile...</h3>
+        </div>
+        <div class="col-12">
+            <img [src]="imgPath" alt="" class="img-fluid img-style">
+        </div>
+        <div class="col-12">
+            <h3 class="fw-bold style">Name : {{colApiRes?.data.first_name}} {{colApiRes?.data.last_name}}</h3>
+        </div>
+        <div class="col-12">
+            <h3 class="fw-bold style">Email : {{colApiRes?.data.email}}</h3>
+        </div>
+        <div class="col-12 style">
+            <button class="btn btn-danger fw-bold" (click)="toLogOut()">Log Out!</button>
+        </div>
+    </div>
+</div>

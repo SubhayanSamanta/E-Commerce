@@ -1,0 +1,40 @@
+<!-- <h3 class="text-center">Email : {{i.regMail}}</h3> -->
+<div *ngFor="let i of items; index as ind">
+    <div class="row m-3">
+        <div class="col-2">
+            <img src="{{i.ptsimg}}" alt="" class="img-fluid image">
+        </div>
+        <div class="col-2">
+            <h5>{{i.ptstitle}}</h5>
+        </div>
+        <div class="col-2">
+            <h5>Price: {{i.offerPrice | currency : 'INR'}}</h5>
+        </div>
+        <div class="col-2">
+            <h5>Quantity : {{i.quantity}}</h5>
+        </div>
+        <div class="col-2">
+            <h5>Total price: : {{i.totalPrice | currency : 'INR'}}</h5>
+        </div>
+        <div class="col-2">
+            <button (click)="clickToRemove(i, ind)" class="btn btn-danger">Remove</button>
+        </div>
+    </div>
+</div>
+<hr>
+<h5 class="text-center">Grand Total: {{gTotal}}</h5>
+<p class="align">
+    <button class="btn btn-warning fw-bold" (click)="navigate()">
+        Buy Now
+    </button>
+</p>
+
+<!-- <div class="container m-5">
+        <div class="col-xl-6">
+            <img src={{i.ptsimg}} class="image-fluid image" alt="">
+        </div>
+        <div class="col-xl-6">
+            <h3 class="fw-bold">{{data.ptstitle}}</h3>
+
+        </div>
+    </div> -->

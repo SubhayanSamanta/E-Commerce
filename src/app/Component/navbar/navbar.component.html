@@ -1,0 +1,86 @@
+<header class="p-3 bg-dark text-white">
+    <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                <img src="assets/images/logo.png" alt="" class="image-fluid img">
+            </a>
+
+            <form class="d-flex" [formGroup]="searchData" (ngSubmit)="subSearchData()">
+
+                <input class="form-control style" formControlName="sdata" type="search" placeholder="Search"
+                    aria-label="Search">
+
+                <button class="btn btn-warning fw-bold btn-style" type="submit">Search</button>
+
+            </form>
+
+            <!-- <form class="col-12 col-lg-auto mb-3 mb-lg-0 ms-lg-auto">
+                <input type="search" class="form-control form-control-dark search" placeholder="Search..." aria-label="Search">
+            </form> -->
+
+            <ul class="nav col-12 col-lg-auto ms-lg-auto mb-2 justify-content-center mb-md-0">
+                <!-- <li><a href="/home" class="nav-link px-2 text-white fw-bold">Home</a></li>
+                <li><a href="#" class="nav-link px-2 text-white fw-bold">About Us</a></li>
+                <li><a href="#" class="nav-link px-2 text-white fw-bold">Contact Us</a></li> -->
+                <li><a routerLink="/home" class="nav-link px-2 text-white fw-bold">Home</a></li>
+                <li><a routerLink="/all-product" class="nav-link px-2 text-white fw-bold">All Product</a></li>
+                <li><a routerLink="/about-us" class="nav-link px-2 text-white fw-bold">About Us</a></li>
+                <li><a routerLink="/contact-us" class="nav-link px-2 text-white fw-bold">Contact Us</a></li>
+            </ul>
+
+            <!-- <div class="text-end">
+                <button type="button" routerLink="/sign-in" class="btn btn-outline-light me-2 fw-bold">Login</button>
+                <button type="button" routerLink="/sign-up" class="btn btn-warning fw-bold">Sign-up</button>
+            </div> -->
+
+            <ng-container *ngIf="!loggedIn(); else logged">
+                <button type="button" routerLink="/sign-in" class="btn btn-outline-light me-2 fw-bold">Login</button>
+                <button type="button" routerLink="/sign-up" class="btn btn-warning fw-bold">Sign-up</button>
+            </ng-container>
+            <ng-template #logged>
+                <div class="new add-style">
+                    <div class="dropdown">
+                        <div class="dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img [src]="imgPath" alt="mdo" width="32" height="32" class="rounded-circle">
+                        </div>
+                        <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+                            <li>
+                                <a class="dropdown-item fw-bold" href="#">{{colRespon?.data?.first_name}}
+                                    {{colRespon?.data?.last_name}}</a>
+                            </li>
+                            <li><a class="dropdown-item" (click)="navigate()">Profile</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#" (click)="signOut()">Sign out</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </ng-template>
+
+            <a routerLink="cart" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                <!-- <img src="assets/images/cart1.jpg" alt="" class="image-fluid img"> -->
+                <i class="bi bi-cart3 icon"></i>
+            </a>
+
+            <!-- <div class="new add-style">
+                <div class="dropdown">
+                    <div class="dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img [src]="imgPath" alt="mdo" width="32" height="32" class="rounded-circle">
+                    </div>
+                    <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+                        <li>
+                            <a class="dropdown-item fw-bold" href="#">{{colRespon?.data?.first_name}}
+                                {{colRespon?.data?.last_name}}</a>
+                        </li>
+                        <li><a class="dropdown-item" routerLink="/profile">Profile</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#" (click)="signOut()">Sign out</a></li>
+                    </ul>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</header>

@@ -1,0 +1,67 @@
+<!-- <div class="container-fluid">
+    <div class="row">
+        <ng-container *ngFor="let n of colSearchService">
+            <div class="col-xl-2 col-lg-3 col-md-3 col-sm-4">
+                <div class="card m-3 p-3">
+                    <a routerLink="single-all-product/{{n.id}}">
+                        <img src={{n.simg}} class="card-img-top image-fluid" alt="...">
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title">{{n.sname}}</h5>
+                        <span class="text-decoration-line-through text-danger">Mrp : {{n.sprice}}/- </span>
+                        <span class="badge bg-success p-1">Get 40% off.</span>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div> -->
+
+<!-- <div class="container-fluid">
+    <div class="row">
+        <ng-container *ngIf="colSearchService.length>0;else elsePart">
+        <ng-container *ngFor="let n of colSearchService">
+            <div class="col-xl-2 col-lg-3 col-md-3 col-sm-4">
+                <div class="card m-3 p-3">
+                    <a routerLink="single-all-product/{{n.id}}">
+                        <img src={{n.pimg}} class="card-img-top image-fluid" alt="...">
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title">{{n.pname}}</h5>
+                        <span class="text-decoration-line-through text-danger">Mrp : {{n.pprice}}/- </span>
+                        <span class="badge bg-success p-1">Get 40% off.</span>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </ng-container>
+    <ng-template #elsePart>
+        <h1>No such product found</h1>
+    </ng-template>
+    </div>
+</div> -->
+<div class="container m-5">
+    <div *ngFor="let data of colSearchService">
+        <div class="row">
+            <div class="col-xl-6">
+                <img src={{data.pimg}} class="image-fluid image" alt="">
+            </div>
+            <div class="col-xl-6">
+                <h3 class="fw-bold">{{data.pname}}</h3>
+                <h4>{{data.pdesc1}}</h4>
+                <h5 class="fw-bold">{{data.pdesc2}}</h5>
+                <h5 class="fw-bold">{{data.pdesc3}}</h5>
+                <h3 class="h3">{{data.pprice | percentage : 40 | currency : 'INR'}}/-</h3>
+                <span class="text-decoration-line-through text-danger h5"> Mrp : {{data.pprice}}/- </span>
+                <span class="badge bg-success p-1 h2">Get 40% off.</span>
+                <p>
+                    <span><button class="btn btn-warning button">Add to Cart</button></span>
+                    <span><button class="btn btn-warning button" (click)="navigate()">Buy Now</button></span>
+                </p>
+            </div>
+        </div>
+        <hr>
+    </div>
+</div>
+
+

@@ -1,0 +1,23 @@
+<div class="container-fluid">
+    <div class="row m-3 p-3">
+        <ng-container *ngFor="let n of colProductsTwo">
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                <div class="card m-1 p-1">
+
+                        <img src={{n.ctimg}} class="card-img-top image-fluid" alt="...">
+
+                    <div class="card-body">
+                        <h5 class="card-title">{{n.ctname}}</h5>
+                        <h4 class="card-title">{{n.cttitle}}</h4>
+                        <p class="card-title">{{n.ctpar1}}</p>
+                        <span class="text-decoration-line-through text-danger">Mrp : {{n.ctprice}}/- </span>
+                        <span class="badge bg-success p-1">Get 30% off.</span>
+                    </div>
+                    <a routerLink="single-home-card-two-dtls/{{n.ctid}}">
+                        <button class="btn btn-warning btn-style">Buy Now</button>
+                    </a>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>
